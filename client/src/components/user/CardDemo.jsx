@@ -1,39 +1,28 @@
-import * as React from "react";
-
+import React, { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import config from '@/config.js';
 import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
-import { useRef } from 'react';
-export default function CardDemo({onSubmit}) {
-  const [emailContent, setEmailContent] = React.useState("");
-  console.log(emailContent);
+import config from "@/config.js";
+
+export default function CardDemo({ onSubmit }) {
+  const [emailContent, setEmailContent] = useState("");
   const formRef = useRef();
+
   const handleSubmit = async () => {
-    onSubmit();
     try {
-      axios
-        .post(`${config.url}/setContent`, { content: emailContent })
-        .then((response) => {
-          console.log(response.data);
-        });
+      const response = await axios.post(`${config.url}/generate`, { content: emailContent });
+      onSubmit(response.data);  // Pass the response data to the parent component
     } catch (e) {
       console.log(e.message);
     }
   };
+
   return (
     <Card className="w-full w-mx-xl">
       <CardHeader className="text-left">
-        <CardTitle className="font-bold text-l">Is this a Phishing email ?</CardTitle>
+        <CardTitle className="font-bold text-l">Is this a Phishing email?</CardTitle>
         <CardDescription>You are a click away to know</CardDescription>
       </CardHeader>
       <CardContent>
