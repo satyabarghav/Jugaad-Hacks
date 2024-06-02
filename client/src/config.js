@@ -1,5 +1,5 @@
 const config = {
-    url: 'https://jugaad-hacks.onrender.com:5000'
+    url: 'https://jugaad-hacks.onrender.com'
 }
 
 export default config;
