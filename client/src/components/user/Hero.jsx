@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import CardDemo from "./CardDemo.jsx";
 import Markdown from "react-markdown";
 import axios from "axios";
+import { Progress } from "../ui/progress.jsx";
+import { Card, CardContent, CardHeader,CardTitle } from "../ui/card.jsx";
 export default function HeroSec() {
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState("");
-
+  const [score, setScore] = useState(0);
   // Function to handle form submission
   const handleSubmit = async () => {
     setSubmitted(true); // Update the 'submitted' state to true
@@ -13,6 +15,7 @@ export default function HeroSec() {
       const { data } = await axios.get("http://127.0.0.1:5000/generate");
       console.log(data.message);
       setMessage(data.message.message);
+      setScore(data.message.confidence_score);
     } catch (error) {
       console.error("Error fetching message:", error);
     }
@@ -25,7 +28,7 @@ export default function HeroSec() {
   return (
     <>
       {submitted ? (
-        <After message={message} />
+        <After message={message} score={score} />
       ) : (
         <Hero onSubmit={handleSubmit} />
       )}
@@ -33,7 +36,7 @@ export default function HeroSec() {
   );
 }
 
-const After = ({ message }) => {
+const After = ({ message, score }) => {
   const components = {
     h1: (props) => <h1 className="text-4xl font-bold mb-2" {...props} />,
     p: (props) => <p className="text-base my-4" {...props} />,
@@ -42,14 +45,19 @@ const After = ({ message }) => {
     li: (props) => <li className="text-base" {...props} />,
     // Add more components for other Markdown elements as needed
   };
-
+  console.log(score * 100);
   return (
-    <div className="p-4">
-    <Markdown
-      components={components}
-    >
-      {message}
-    </Markdown>
+    <div className="flex justify-center items-center h-screen">
+      <div className="p-4">
+        <Card className="w-auto flex items-center justify-center h-screen">
+          <CardHeader>
+            <CardTitle>Phishing Detection Results</CardTitle> {score*100}</CardHeader>
+          <CardContent>
+          <Progress value={score * 100} />
+            <Markdown components={components}>{message}</Markdown>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };

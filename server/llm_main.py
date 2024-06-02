@@ -3,7 +3,7 @@ import json
 from groq import Groq
 
 API_URL = "https://api-inference.huggingface.co/models/ealvaradob/bert-finetuned-phishing"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": "Bearer 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"}
 # email_content = "Dear colleague, An important update about your email has exceeded your storage limit. You will not be able to send or receive all of your messages. We will close all older versions of our Mailbox as of Friday, June 12, 2023. To activate and complete the required information click here (https://ec-ec.squarespace.com). Account must be reactivated today to regenerate new space. Management Team"
 
 
@@ -26,7 +26,7 @@ def generate_messages(email_content):
 
     # Extract predicted class and score
     predicted_class = prediction_data["label"]
-    confidence_score = prediction_data["score"]
+    confidence_score = prediction_data["score"]*100
 
     # Groq API configuration
     GROQ_API_KEY = "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"  # Replace with your API key
