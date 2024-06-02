@@ -124,37 +124,37 @@ export default function About() {
                 <div className="flex flex-col items-center space-y-2">
                   <Avatar>
                     <img src="/placeholder.svg" />
-                    <AvatarFallback>OM</AvatarFallback>
+                    <AvatarFallback>R</AvatarFallback>
                   </Avatar>
                   <div className="text-center">
-                    <h3 className="text-lg font-semibold">Sofia Davis</h3>
+                    <h3 className="text-lg font-semibold">Rahul</h3>
                   </div>
                 </div>
                 <div className="flex flex-col items-center space-y-2">
                   <Avatar>
                     <img src="/placeholder.svg" />
-                    <AvatarFallback>JL</AvatarFallback>
+                    <AvatarFallback>S</AvatarFallback>
                   </Avatar>
                   <div className="text-center">
-                    <h3 className="text-lg font-semibold">Jackson Lee</h3>
+                    <h3 className="text-lg font-semibold">Satya</h3>
                   </div>
                 </div>
                 <div className="flex flex-col items-center space-y-2">
                   <Avatar>
                     <img src="/placeholder.svg" />
-                    <AvatarFallback>EW</AvatarFallback>
+                    <AvatarFallback>P</AvatarFallback>
                   </Avatar>
                   <div className="text-center">
-                    <h3 className="text-lg font-semibold">Emily Wang</h3>
+                    <h3 className="text-lg font-semibold">Praneetha</h3>
                   </div>
                 </div>
                 <div className="flex flex-col items-center space-y-2">
                   <Avatar>
                     <img src="/placeholder.svg" />
-                    <AvatarFallback>JD</AvatarFallback>
+                    <AvatarFallback>P</AvatarFallback>
                   </Avatar>
                   <div className="text-center">
-                    <h3 className="text-lg font-semibold">John Doe</h3>
+                    <h3 className="text-lg font-semibold">Preethi</h3>
                   </div>
                 </div>
               </div>

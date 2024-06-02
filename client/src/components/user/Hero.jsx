@@ -46,7 +46,7 @@ const After = ({ message, score }) => {
   }
 
   return (
-    <>
+    <div className="pb-10">
       <NavbarDemo />
       <div className="flex justify-center items-center">
         <div className="p-4">
@@ -61,13 +61,13 @@ const After = ({ message, score }) => {
           </Card>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 const Hero = ({ onSubmit }) => {
   return (
-    <>
+    <div className="pb-10">
       <NavbarDemo />
       <div className="h-screen bg-custom-gradient">
         <div className="flex flex-col lg:flex-row items-center justify-center pt-8">
@@ -87,6 +87,6 @@ const Hero = ({ onSubmit }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

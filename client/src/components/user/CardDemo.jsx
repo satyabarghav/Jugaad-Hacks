@@ -20,7 +20,7 @@ export default function CardDemo({ onSubmit }) {
   };
 
   return (
-    <Card className="w-full w-mx-xl">
+    <Card className="w-full w-mx-xl pb-5">
       <CardHeader className="text-left">
         <CardTitle className="font-bold text-l">Is this a Phishing email?</CardTitle>
         <CardDescription>You are a click away to know</CardDescription>
