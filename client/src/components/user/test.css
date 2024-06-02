@@ -1,0 +1,25 @@
+.markdown-container {
+    font-family: Arial, sans-serif; /* Example font family */
+    font-size: 16px; /* Example font size */
+    line-height: 1.6; /* Example line height */
+    color: #333; /* Example text color */
+  }
+  
+  .markdown-container h1 {
+    font-size: 24px; /* Example heading 1 font size */
+    font-weight: bold; /* Example heading 1 font weight */
+    margin-bottom: 20px; /* Example margin bottom for headings */
+  }
+  
+  .markdown-container p {
+    margin-bottom: 10px; /* Example margin bottom for paragraphs */
+  }
+  
+  .markdown-container strong {
+    font-weight: bold; /* Example bold text */
+  }
+  
+  .markdown-container em {
+    font-style: italic; /* Example italic text */
+  }
+  
