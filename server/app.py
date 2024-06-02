@@ -7,7 +7,9 @@ CORS(app)
 
 email_content = ""
 
-
+@app.route("/")
+def index():
+    return "Hello World!"
 @app.route("/setContent", methods=["POST"])
 def set_content():
     global email_content

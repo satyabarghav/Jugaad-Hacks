@@ -5,6 +5,7 @@ import axios from "axios";
 import { Progress } from "../ui/progress.jsx";
 import { Card, CardContent, CardHeader,CardTitle } from "../ui/card.jsx";
 import NavbarDemo from "./NavbarDemo.jsx";
+import config from "@/config.js";
 export default function HeroSec() {
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState("");
@@ -13,7 +14,7 @@ export default function HeroSec() {
   const handleSubmit = async () => {
     setSubmitted(true); // Update the 'submitted' state to true
     try {
-      const { data } = await axios.get("http://127.0.0.1:5000/generate");
+      const { data } = await axios.get(`${config.url}/generate`);
       console.log(data.message);
       setMessage(data.message.message);
       setScore(data.message.confidence_score);

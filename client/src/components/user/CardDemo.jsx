@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-
+import config from '@/config.js';
 import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
 export default function CardDemo({onSubmit}) {
@@ -20,7 +20,7 @@ export default function CardDemo({onSubmit}) {
     onSubmit();
     try {
       axios
-        .post("http://127.0.0.1:5000/setContent", { content: emailContent })
+        .post(`${config.url}/setContent`, { content: emailContent })
         .then((response) => {
           console.log(response.data);
         });
