@@ -29,9 +29,9 @@ export default function CardDemo({onSubmit}) {
     }
   };
   return (
-    <Card className="w-[550px]">
+    <Card className="w-full w-mx-xl">
       <CardHeader className="text-left">
-        <CardTitle>Is this a Phishing email ?</CardTitle>
+        <CardTitle className="font-bold text-l">Is this a Phishing email ?</CardTitle>
         <CardDescription>You are a click away to know</CardDescription>
       </CardHeader>
       <CardContent>

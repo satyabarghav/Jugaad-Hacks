@@ -21,6 +21,8 @@ module.exports = {
         'custom-gradient': 'linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.9) 50%, rgba(255, 255, 255, 0.9) 100%)',
       },
       colors: {
+        phish : "#f9bec7",
+        notphish: "#c7f9cc",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -8,7 +8,7 @@ import safeLinkBlack from "../../assets/safeLinkBlack.png";
 export default function NavbarDemo() {
   return (
       <header className="flex w-full items-center justify-between bg-custom-gradient px-4 py-3 shadow-sm sm:px-6 md:px-8 lg:px-10">
-        <Link to="#" className="flex items-center" prefetch={false}>
+        <Link to="/" className="flex items-center" >
           {/* <MountainIcon className="h-6 w-6" /> */}
           <img
            src={safeLinkBlack}
@@ -19,30 +19,26 @@ export default function NavbarDemo() {
         </Link>
         <nav className="hidden items-center gap-12 text-lg font-medium lg:flex flex-grow justify-center">
           <Link
-            to="#"
+            to="/"
             className="hover:underline hover:underline-offset-4"
-            prefetch={false}
           >
             Home
           </Link>
           <Link
-            to="#"
+            to="/about"
             className="hover:underline hover:underline-offset-4"
-            prefetch={false}
           >
             About
           </Link>
           <Link
-            to="#"
+            to="/services"
             className="hover:underline hover:underline-offset-4"
-            prefetch={false}
           >
             Services
           </Link>
           <Link
-            to="#"
+            to="/contact"
             className="hover:underline hover:underline-offset-4"
-            prefetch={false}
           >
             Contact
           </Link>
@@ -65,33 +61,29 @@ export default function NavbarDemo() {
       </div> */}
         <div className="fixed bottom-0 left-0 z-10 flex w-full items-center justify-around bg-white py-3 shadow-t dark:bg-gray-950 lg:hidden">
           <Link
-            to="#"
+            to="/"
             className="flex flex-col items-center gap-1 text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            prefetch={false}
           >
             <HomeIcon className="h-6 w-6" />
             Home
           </Link>
           <Link
-            to="#"
+            to="/about"
             className="flex flex-col items-center gap-1 text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            prefetch={false}
           >
             <InfoIcon className="h-6 w-6" />
             About
           </Link>
           <Link
-            to="#"
+            to="/services"
             className="flex flex-col items-center gap-1 text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            prefetch={false}
           >
             <BriefcaseIcon className="h-6 w-6" />
             Services
           </Link>
           <Link
-            to="#"
+            to="/contact"
             className="flex flex-col items-center gap-1 text-xs font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            prefetch={false}
           >
             <MailIcon className="h-6 w-6" />
             Contact
