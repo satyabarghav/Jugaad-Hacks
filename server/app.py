@@ -22,7 +22,9 @@ def set_content():
 
 @app.route("/generate", methods=["GET"])
 def generate():
+    global email_content
     response = generate_messages(email_content)
+    email_content = ""
     if response:
         return jsonify({"message": response})
     else:
