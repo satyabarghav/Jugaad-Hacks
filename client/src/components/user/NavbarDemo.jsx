@@ -21,6 +21,7 @@ export default function NavbarDemo() {
           <Link
             to="/"
             className="hover:underline hover:underline-offset-4"
+            onClick={()=>window.location.reload()}
           >
             Home
           </Link>

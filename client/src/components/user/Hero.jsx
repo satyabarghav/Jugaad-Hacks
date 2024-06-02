@@ -29,7 +29,7 @@ export default function HeroSec() {
 
   return (
     <>
-      <NavbarDemo/>
+      
       <div >
       {submitted ? (
         <After message={message} score={score} />
@@ -53,7 +53,9 @@ const After = ({ message, score }) => {
   const cardColor = message.includes("benign") ? "bg-notphish" : "bg-phish";
   console.log(score * 100);
   return (
-    <div className="flex justify-center items-center h-screen">
+    <>
+    <NavbarDemo/>
+    <div className="flex justify-center items-center ">
       <div className="p-4">
         <Card className={`w-full w-max-md flex flex-col items-center justify-center ${cardColor}`}>
           <CardHeader>
@@ -65,11 +67,14 @@ const After = ({ message, score }) => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 
 const Hero = ({ onSubmit }) => {
   return (
+    <>
+    <NavbarDemo/>
     <div className="h-screen bg-custom-gradient">
     <div className="flex flex-col lg:flex-row items-center justify-center pt-8">
       <div className="lg:w-1/2 p-8 text-center lg:text-left">
@@ -90,5 +95,6 @@ const Hero = ({ onSubmit }) => {
       </div>
     </div>
     </div>
+    </>
   );
 };

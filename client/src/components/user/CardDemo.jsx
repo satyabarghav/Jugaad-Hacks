@@ -13,9 +13,11 @@ import { Label } from "@/components/ui/label";
 import config from '@/config.js';
 import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
+import { useRef } from 'react';
 export default function CardDemo({onSubmit}) {
   const [emailContent, setEmailContent] = React.useState("");
   console.log(emailContent);
+  const formRef = useRef();
   const handleSubmit = async () => {
     onSubmit();
     try {
@@ -35,7 +37,7 @@ export default function CardDemo({onSubmit}) {
         <CardDescription>You are a click away to know</CardDescription>
       </CardHeader>
       <CardContent>
-        <form>
+        <form ref={formRef}>
           <div className="grid w-full gap-1.5 text-left">
             <Label htmlFor="message-2">Email Content</Label>
             <Textarea
@@ -50,7 +52,7 @@ export default function CardDemo({onSubmit}) {
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Reset</Button>
+        <Button variant="outline" onClick={() => formRef.current.reset()}>Reset</Button>
         <Button onClick={handleSubmit}>Check</Button>
       </CardFooter>
     </Card>
