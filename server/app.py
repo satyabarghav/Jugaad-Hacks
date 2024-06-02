@@ -10,10 +10,10 @@ email_content = ""
 @app.route("/")
 def index():
     return "Hello World!"
+
 @app.route("/setContent", methods=["POST"])
 def set_content():
     global email_content
-    global response
 
     data = request.get_json()
     if "content" in data:
@@ -25,9 +25,10 @@ def set_content():
 @app.route("/generate", methods=["GET"])
 def generate():
     global email_content
-    response = generate_messages(email_content)
-    email_content = ""
-    if response:
+
+    if email_content:
+        response = generate_messages(email_content)
+        email_content = ""
         return jsonify({"message": response})
     else:
         return jsonify({"error": "No data available"}), 404
