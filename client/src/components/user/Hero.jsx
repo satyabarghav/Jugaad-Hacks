@@ -4,7 +4,7 @@ import Markdown from "react-markdown";
 import { Progress } from "../ui/progress.jsx";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card.jsx";
 import NavbarDemo from "./NavbarDemo.jsx";
-
+import Loader from "./Loader.jsx";
 export default function HeroSec() {
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState("");
@@ -13,8 +13,8 @@ export default function HeroSec() {
   // Function to handle form submission and set the state
   const handleSubmit = (data) => {
     setSubmitted(true); // Update the 'submitted' state to true
-    setMessage(data.message); // Set the message state with the response message
-    setScore(data.confidence_score); // Set the score state with the confidence score
+    setMessage(data.message.message); // Set the message state with the response message
+    setScore(data.message.confidence_score); // Set the score state with the confidence score
   };
 
   return (
@@ -40,14 +40,17 @@ const After = ({ message, score }) => {
   };
 
   const cardColor = message.includes("benign") ? "bg-notphish" : "bg-phish";
+
+  if (score === 0) {
+    return <Loader />;  // Render the loader if score is 0
+  }
+
   return (
     <>
       <NavbarDemo />
       <div className="flex justify-center items-center">
         <div className="p-4">
-          <Card
-            className={`w-full w-max-md flex flex-col items-center justify-center ${cardColor}`}
-          >
+          <Card className={`w-full w-max-md flex flex-col items-center justify-center ${cardColor}`}>
             <CardHeader>
               <CardTitle>Phishing Detection Results</CardTitle> {score * 100}
             </CardHeader>
